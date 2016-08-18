@@ -1,0 +1,407 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>StupidPhoto</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style type="text/css">
+      .tk-proxima-nova {
+        font-family: "proxima-nova", sans-serif;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: proxima-nova;
+        src: url(https://fonts.typekit.net/af/03034e/00000000000000003b9ad1b1/27/l?subset_id=2&fvd=n7) format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: proxima-nova;
+        src: url(https://fonts.typekit.net/af/921f74/00000000000000003b9ad1bb/27/l?subset_id=2&fvd=n6) format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: proxima-nova;
+        src: url(https://fonts.typekit.net/af/edab9a/00000000000000003b9ad1b9/27/l?subset_id=2&fvd=n4) format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: proxima-nova;
+        src: url(https://fonts.typekit.net/af/015ec8/00000000000000003b9ad1b5/27/l?subset_id=2&fvd=n3) format("woff2");
+        font-weight: 300;
+        font-style: normal;
+      }
+    </style>
+
+    <style>
+        body {
+            background: #FFF;
+            font-family: proxima-nova, Lato, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            /*line-height: 1.4;*/
+            width: 100%;
+            float: left;
+            overflow-x: hidden;
+        }
+
+        .container {
+          width: 940px;
+          position: relative;
+          box-sizing: border-box;
+          margin: 0 auto;
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        a {
+            letter-spacing: 4px;
+            font-weight: 700;
+            line-height: 30px;
+            color: #000;
+            font-size: 24px;
+            font-style: normal;
+            display: inline-block;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-decoration-line: none;
+            text-decoration-style: solid;
+            float: none;
+        }
+
+        .header a:hover {
+            color: #555555;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            display: block;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        #search {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #gallery-name {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* container */
+        .content {
+            width: 100%;
+            position: relative;
+            margin: 60px 0 40px;
+            background: #FFF;
+            margin: 0 auto;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .content #collection-list {
+            padding: 30px 0 20px;
+        }
+
+        .image-item {
+          width: 300px;
+          height: 200px;
+          margin: 10px 5px 10px 5px;
+          padding-right: 0px;
+          display: inline-block;
+          box-sizing: content-box;
+          /*background: #FFF;*/
+          background-size: cover;
+          background-position: 50%;
+          position: relative;
+        }
+
+        #collection-list .image-item:hover {
+          opacity: 0.7;
+          transition: 0.3s;
+          /* border: 1px solid #777;*/
+          cursor: pointer;
+        }
+        .marginless-left {
+          margin-left: 10px;
+        }
+
+        #break-page {
+            padding-bottom: 30px;
+        }
+
+        #showImage {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            background: #FFF;
+            background-position: 50%;
+        }
+
+        #myImage {
+            /*max-width: 100%;
+            max-height: 100%;*/
+            margin-left: auto;
+            margin-top: auto;
+            margin-right: auto;
+        }
+        /* Footer */
+
+        .footer {
+            color: #777;;
+            margin: 40px 0 20px;
+            font-size: 12px;
+            /*padding: 15px 20px;
+            float: left;
+            height: 80px; */
+            display: block;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .footer p {
+          margin: 0 0 10px;
+        }
+
+        /* button */
+        #btn-close {
+          color: rgb(204, 204, 204);
+          top: 5%;
+          right: 10%;
+          cursor: pointer;
+          display: block;
+          text-align: center;
+          position: fixed;
+          text-align: center;
+        }
+        #btn-close:hover {
+          color: rgb(51, 51, 51);
+        }
+
+        #btn-left {
+          color: #E8E8E8;
+          top: 50%;
+          left: 10%;
+          cursor: pointer;
+          text-align: center;
+          position: absolute;
+        }
+        #btn-left:hover {
+          color: rgb(51, 51, 51);
+        }
+
+        #btn-right {
+          color: #E8E8E8;
+          top: 50%;
+          right: 10%;
+          cursor: pointer;
+          text-align: center;
+          position: absolute;
+        }
+        #btn-right:hover {
+          color: rgb(51, 51, 51);
+        }
+
+        #name {
+          font-size: 12px;
+          letter-spacing: 1px;
+          margin-top: 12px;
+          bottom: 0;
+          text-align: center;
+          text-transform: uppercase;
+          color: rgb(34, 34, 34);
+          position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div id="search"></div>
+            <div id="gallery-name" class="text-center">
+                <a href="http://lphn.canh.me/" target="_blank">STUPID-PHOTO</a>
+            </div>
+        </div>
+        <div class="content">
+            <div id="collection-list">
+              <a href="http://lphn.canh.me/TestCollection.html">
+                <div class="image-item text-center marginless-left" style="background-image:url(http://lphn.canh.me/images/show2.jpg);")></div>
+                <p id="name">Test Collection</p>
+              </a>
+
+              <a href="http://lphn.canh.me/Pogoda.html">
+                <div class="image-item text-center" style="background-image:url(http://lphn.canh.me/images/Pogoda/3.JPG);")>
+                </div>
+                <p id="name">Pogoda - part1</p>
+              </a>
+              <!-- <div class="image-item text-center" style="background-image:url(http://lphn.canh.me/images/show3.jpg);")>
+              </div>
+
+              <div class="image-item text-center marginless-left"style="background-image:url(http://lphn.canh.me/images/show4.jpg);")>
+              </div><div class="image-item text-center" style="background-image:url(http://lphn.canh.me/images/show5.jpg);")>
+              </div><div class="image-item text-center" style="background-image:url(http://lphn.canh.me/images/show6.jpg);")>
+              </div>
+
+              <div class="image-item text-center marginless-left"style="background-image:url(http://lphn.canh.me/images/show7.jpg);")>
+              </div><div class="image-item text-center" style="background-image:url(http://lphn.canh.me/images/show8.jpg);")>
+              </div><div class="image-item text-center" style="background-image:url(http://lphn.canh.me/images/show9.jpg);")>
+              </div>
+            -->
+            </div>
+
+            <div id="break-page" class="text-center"></div>
+        </div>
+
+        <div class="footer text-center">
+          <p>&copy;LPHN-STUPIDPHOTO</p>
+        </div>
+
+        <div id="showImage" style="max-width:100%">
+          <i id="btn-close" class="material-icons" style="font-size:30px;">close</i>
+          <i id="btn-left"  class="fa fa-angle-left" style="font-size:48px;"></i>
+          <i id="btn-right" class="fa fa-angle-right" style="font-size:48px;"></i>
+          <img id="myImage">
+        </div>
+        <script>
+        /*
+        $(document).ready(function() {
+          var scrollBody = function(flag) {
+            if (flag === true) {
+              $("body").css("overflow", "scroll");
+            } else {
+              $("body").css("overflow", "hidden");
+            }
+          };
+
+          var currIndex;
+          var showImageFunc = function (currIndex, isFirst) {
+              var element = $(".image-item")[currIndex];
+              var imgURL = $(element).css('background-image').slice(5,-2);
+              imgURL = "url('" + imgURL + "')";
+              scrollBody(false);
+
+              if (isFirst === true) {
+                $("showImage").animate("opacity: '0.9'");
+                $("#showImage").css("background-image", imgURL);
+                $("#showImage").css("background-repeat", "no-repeat");
+                $("#showImage").fadeIn("slow", function() {
+                  $("#showImage").css("display", "block");
+                  $("showImage").animate("opacity: '0'");
+                });
+              }
+              else {
+                $("#showImage").css("background-image", imgURL);
+                $("#showImage").css("background-repeat", "no-repeat");
+              }
+          };
+
+          var slideIndex = function (currImage) {
+            var count = $(".image-item").length;
+            var index;
+            for (index = 0; index < count; index++) {
+              if ($(".image-item")[index] == currImage) {
+                return index;
+              }
+            }
+          };
+
+          $(".image-item").on("click", function() {
+            currIndex = slideIndex(this);
+            showImageFunc(currIndex, true);
+          });
+          */
+
+          /* Set button */
+
+          /*
+          $("#btn-close").on("click", function() {
+            $("#showImage").css("display", "none");
+            scrollBody(true);
+          });
+
+          $("#btn-left").on("click", function() {
+            currIndex += -1;
+            if (currIndex < 0) {
+              currIndex = $(".image-item").length - 1;
+            }
+            showImageFunc(currIndex, false);
+          });
+
+          $("#btn-right").on("click", function() {
+            currIndex += 1;
+            if (currIndex === $(".image-item").length) {
+              currIndex = 0;
+            }
+            showImageFunc(currIndex, false);
+          });
+
+          $(document).on("keydown", function (e) {
+            switch (e.keyCode) {
+              case 27: {
+                $("#showImage").css("display", "none");
+                scrollBody(true);
+                break;
+              }
+              case 37: {
+                currIndex += -1;
+                if (currIndex < 0) {
+                  currIndex = $(".image-item").length - 1;
+                }
+                showImageFunc(currIndex, false);
+                break;
+              }
+              case 39: {
+                currIndex += 1;
+                if (currIndex === $(".image-item").length) {
+                  currIndex = 0;
+                }
+                showImageFunc(currIndex, false);
+              }
+              default: break;
+            }
+          });
+        });
+        */
+        /* //Js
+        function getURL(element) {
+          var url = element.style.backgroundImage;
+          return url;
+        }
+
+        function onClick(element) {
+          var url = getURL(element).slice(5,-2);
+          //.replace(/"/g, "");
+          var myImg = document.getElementById("myImage");
+          var myDivImg = document.getElementById("showImage");
+          //myImg.src = url;
+          url = "url('" + url + "')";
+          console.log(url);
+          //myImg.alt = element.alt;
+
+          myDivImg.style.backgroundImage = url;
+          myDivImg.style.backgroundRepeat = "no-repeat";
+          myDivImg.style.display = "block";
+        }
+        */
+        </script>
+    </div>
+</body>
+
+</html>

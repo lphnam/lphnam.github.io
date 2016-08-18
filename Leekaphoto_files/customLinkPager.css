@@ -1,0 +1,107 @@
+ul.yiiPager
+{
+	font-size: 18px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	display: inline;
+}
+
+ul.yiiPager li
+{
+	display:inline;
+}
+
+ul.yiiPager a:link,
+ul.yiiPager a:visited
+{
+	border: solid 1px #DDD;
+	font-weight:bold;
+	color: #1abc9c;
+	padding: 10px 15px;
+	text-decoration:none;
+	min-width: 40px;
+	min-height: 40px;
+}
+
+ul.yiiPager .page a
+{
+	font-weight:normal;
+}
+
+ul.yiiPager a:hover
+{
+	background: #F5F5F5;
+}
+
+ul.yiiPager .selected a
+{
+	background: #F5F5F5;
+	color: #666;
+	font-weight:bold;
+	border: solid 1px #DDD;
+}
+
+ul.yiiPager .hidden a
+{
+	border:solid 1px #DEDEDE;
+	color:#888888;
+}
+
+/**
+ * Hide first and last buttons by default.
+ */
+ul.yiiPager .first,
+ul.yiiPager .last
+{
+	display:none;
+}
+
+.home-pagination ul.yiiPager {
+	font-size: 14px;
+}
+
+.home-pagination ul.yiiPager a:link,
+.home-pagination ul.yiiPager a:visited
+{
+	border: 0px;
+	font-weight: normal;
+	color: #555;
+	padding: 10px 15px;
+	text-decoration:none;
+	min-width: 40px;
+	min-height: 40px;
+}
+
+/* Style for activity pagination */
+.activity-pagination ul.yiiPager {
+	font-size: 14px;
+}
+
+.activity-pagination ul.yiiPager a:link,
+.activity-pagination ul.yiiPager a:visited
+{
+	border: 0px;
+	font-weight: normal;
+	color: #1ABC9C;
+	padding: 10px 15px;
+	text-decoration:none;
+	min-width: 40px;
+	min-height: 40px;
+	background: none;
+}
+
+.activity-pagination ul.yiiPager a:hover, .activity-pagination ul.yiiPager a:focus, .activity-pagination ul.yiiPager a:active {
+	color: #2A7869;
+} 
+
+.activity-pagination ul.yiiPager .selected a {
+	color: #4A4A4A;
+	font-weight: bold;
+}
+
+.activity-pagination ul.yiiPager .first, 
+.activity-pagination ul.yiiPager .last {
+	display: inline;
+}
